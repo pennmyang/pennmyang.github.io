@@ -1,4 +1,4 @@
-/* Modern CSS Reset */
+/* Modern CSS Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -8,115 +8,165 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f5f5f5;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+    font-size: 16px;
 }
 
+/* Layout */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-header {
-    text-align: center;
-    padding: 3rem 0;
+main {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 2fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
 }
 
+/* Typography */
 h1 {
     font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
 }
 
 h2 {
-    font-size: 2rem;
-    color: #34495e;
-    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 2rem 0 1rem;
 }
 
-section {
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #4a5568;
+    margin: 1.5rem 0 1rem;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    color: #4a5568;
+}
+
+/* Left Column Styles */
+.left-column {
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+}
+
+.profile-section {
     background: white;
-    border-radius: 10px;
     padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.profile-intro {
     margin-bottom: 2rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-.profile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-}
-
-.profile-text {
-    text-align: center;
-    max-width: 600px;
-}
-
-.profile-text p {
-    margin-bottom: 1rem;
-}
-
-.interests-section ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem 0;
-}
-
-.interests-section li {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 5px;
-    text-align: center;
-}
-
+/* Social Links */
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     margin-top: 1rem;
 }
 
 .social-links a {
-    color: #3498db;
     text-decoration: none;
+    color: #3182ce;
     padding: 0.5rem 1rem;
-    border: 2px solid #3498db;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    border: 1px solid #3182ce;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
 }
 
 .social-links a:hover {
-    background: #3498db;
+    background: #3182ce;
     color: white;
 }
 
+/* Interests Section */
+.interests-section ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.interests-section li {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.interests-section li:last-child {
+    border-bottom: none;
+}
+
+/* Right Column Styles */
+.right-column {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.projects-list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.projects-list li {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid #3182ce;
+}
+
+.projects-list li:hover {
+    background: #edf2f7;
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 2rem 0;
-    color: #666;
+    color: #718096;
+    font-size: 0.9rem;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    
+    .left-column {
+        position: static;
+    }
+    
     .container {
         padding: 1rem;
     }
     
-    h1 {
-        font-size: 2rem;
-    }
-    
-    h2 {
-        font-size: 1.5rem;
+    .profile-section, .right-column {
+        padding: 1.5rem;
     }
     
     .social-links {
         flex-direction: column;
-        align-items: center;
+    }
+    
+    .social-links a {
+        text-align: center;
     }
 } 
