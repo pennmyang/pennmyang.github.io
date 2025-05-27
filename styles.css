@@ -96,6 +96,7 @@ p {
 /* Social Links */
 .social-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 0.75rem;
 }
@@ -108,6 +109,17 @@ p {
     border-radius: 6px;
     font-size: 0.85rem;
     transition: all 0.2s ease;
+}
+
+.social-links a[href^="mailto"] {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.social-links a:not([href^="mailto"]) {
+    flex: 1;
+    text-align: center;
 }
 
 .social-links a:hover {
@@ -145,6 +157,7 @@ p {
     margin-bottom: 2rem;
 }
 
+/* Projects List */
 .projects-list {
     list-style: disc;
     margin: 1rem 0 0 1.2rem;
@@ -160,12 +173,28 @@ p {
     color: var(--british-racing-green);
 }
 
+.projects-list a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.projects-list a:hover {
+    color: var(--british-racing-green);
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem 0;
     color: #718096;
     font-size: 0.85rem;
+}
+
+/* Remove default link styling for all links */
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Responsive Design */
